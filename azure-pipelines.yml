@@ -31,6 +31,6 @@ steps:
     azureSubscription: 'Free Trial (5cbce15a-76a2-4222-8f33-c9f8c3edaa7d)'
     appType: 'webAppLinux'
     WebAppName: 'etoken'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/dist'
     RuntimeStack: 'NODE|10.1'
   displayName: 'Deploy'
