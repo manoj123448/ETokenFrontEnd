@@ -27,12 +27,12 @@ steps:
 - task: FtpUpload@2
   inputs:
     credentialsOption: 'inputs'
-    serverUrl: 'ftps://waws-prod-ma1-009.ftp.azurewebsites.windows.net/site/wwwroot'
+    serverUrl: 'ftps://waws-prod-ma1-009.ftp.azurewebsites.windows.net'
     username: 'etokenweb\$etokenweb'
     password: 'hs55bsjF7iggtGfD4qr5HNQpbDknJdShGnSMrkXk2mXvddjuiq8h2y4fYq3j'
     rootDirectory: '$(System.DefaultWorkingDirectory)/dist/EToken'
     filePatterns: '**'
-    remoteDirectory: '/'
+    remoteDirectory: '/site/wwwroot'
     clean: false
     cleanContents: false
     preservePaths: false
