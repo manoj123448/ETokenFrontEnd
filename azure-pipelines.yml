@@ -30,9 +30,9 @@ steps:
     serverUrl: 'ftps://waws-prod-ma1-009.ftp.azurewebsites.windows.net/site/wwwroot'
     username: 'etokenweb\$etokenweb'
     password: 'hs55bsjF7iggtGfD4qr5HNQpbDknJdShGnSMrkXk2mXvddjuiq8h2y4fYq3j'
-    rootDirectory: '$(Build.ArtifactStagingDirectory)\deploy'
+    rootDirectory: '$(System.DefaultWorkingDirectory)/dist/EToken'
     filePatterns: '**'
-    remoteDirectory: '/upload/$(Build.BuildId)/'
+    remoteDirectory: '/'
     clean: false
     cleanContents: false
     preservePaths: false
