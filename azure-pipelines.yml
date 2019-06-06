@@ -23,11 +23,17 @@ steps:
 - script: |
     ng build --prod
   displayName: 'npm build'
-  
-- task: AzureRmWebAppDeployment@4
+
+- task: FtpUpload@2
   inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Azure connection'
-    appType: 'webApp'
-    WebAppName: 'etokenweb'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/dist/EToken'
+    credentialsOption: 'inputs'
+    serverUrl: 'ftps://waws-prod-ma1-009.ftp.azurewebsites.windows.net/site/wwwroot'
+    username: 'etokenweb\$etokenweb'
+    password: 'hs55bsjF7iggtGfD4qr5HNQpbDknJdShGnSMrkXk2mXvddjuiq8h2y4fYq3j'
+    rootDirectory: '$(Build.ArtifactStagingDirectory)\deploy'
+    filePatterns: '**'
+    remoteDirectory: '/upload/$(Build.BuildId)/'
+    clean: false
+    cleanContents: false
+    preservePaths: false
+    trustSSL: false
