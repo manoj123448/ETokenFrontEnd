@@ -33,7 +33,7 @@ steps:
     rootDirectory: '$(System.DefaultWorkingDirectory)/dist/EToken'
     filePatterns: '**'
     remoteDirectory: '/site/wwwroot'
-    clean: false
-    cleanContents: false
+    clean: true
+    cleanContents: true
     preservePaths: false
     trustSSL: false
